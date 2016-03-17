@@ -485,6 +485,8 @@ keystone::admin_bind_host: "%{hiera('localbind_host')}"
 ##
 keystone::admin_endpoint: "%{hiera('api_protocol')}://%{hiera('keystone_private_address')}:%{hiera('keystone_admin_port')}"
 keystone::public_endpoint: "%{hiera('api_protocol')}://%{hiera('keystone_public_address')}:%{hiera('keystone_port')}"
+keystone::public_workers: 64
+keystone::admin_workers: 2
 
 # these changes are just from our fork and need to be moved to the profile
 rjil::keystone::cache_enabled: true

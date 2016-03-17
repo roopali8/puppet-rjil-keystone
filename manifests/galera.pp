@@ -32,6 +32,8 @@ class rjil::galera(
     override_options   => { 'mysqld' => {
                                           'max_connections' => $mysql_max_connections,
                                           'bind-address'    => $bind_address,
+                                          'wsrep_causal_reads' => '1',
+                                          'sync_binlog' => '1000',
                                         }
                           },
   }
