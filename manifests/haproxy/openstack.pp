@@ -20,7 +20,7 @@ class rjil::haproxy::openstack(
   $keystone_admin_port   = '35357',
   $glance_port           = '9292',
   $glance_registry_port  = '9191',
-  $haproxy_listen_ports  = ['443','5000'],
+  $haproxy_listen_ports  = '443',
   $cinder_port           = '8776',
   $nova_port             = '8774',
   $neutron_port          = '9696',
