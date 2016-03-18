@@ -41,10 +41,10 @@ class rjil::haproxy::openstack(
     cluster_addresses => $keystone_ips,
   }
 
-  rjil::haproxy_service { 'keystone-admin':
-    balancer_ports    => $keystone_admin_port,
-    cluster_addresses => $keystone_internal_ips,
-  }
+#  rjil::haproxy_service { 'keystone-admin':
+#    balancer_ports    => $keystone_admin_port,
+#    cluster_addresses => $keystone_internal_ips,
+#  }
 
 
 }
