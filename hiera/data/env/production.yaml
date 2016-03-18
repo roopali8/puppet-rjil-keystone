@@ -16,10 +16,10 @@ rjil::system::proxies:
   https:
     url: "http://10.140.218.59:3128/"
 
-rjil::system::accounts::active_users: [roopali,neeraj,himanshus,vpramo,nitin,sara]
+rjil::system::accounts::active_users: [roopali,neeraj,himanshus,vpramo,nitin]
 rjil::system::accounts::sudo_users:
   admin:
-    users: [roopali,neeraj,himanshus,vpramo,nitin,sara]
+    users: [roopali,neeraj,himanshus,vpramo,nitin]
 
 rjil::base::self_signed_cert: true
 
@@ -36,7 +36,7 @@ rjil::jiocloud::dns::entries:
   "%{hiera('iam_endpoint_name')}":
     cname: lb.keystone.service.consul
 
-rjil::pacemaker::haproxy_vip_ip: 10.140.209.31
+rjil::pacemaker::haproxy_vip_ip: 10.140.209.35
 rjil::pacemaker::haproxy_vip_nic: em49
 rjil::pacemaker::haproxy_vip_ip_netmask: 26
 
