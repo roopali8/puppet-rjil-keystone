@@ -20,7 +20,7 @@ class rjil::haproxy::openstack(
   $keystone_admin_port   = '35357',
   $glance_port           = '9292',
   $glance_registry_port  = '9191',
-  $haproxy_listen_ports  = ['443','5000'],
+  $haproxy_listen_ports  = '443',
   $cinder_port           = '8776',
   $nova_port             = '8774',
   $neutron_port          = '9696',
@@ -41,10 +41,10 @@ class rjil::haproxy::openstack(
     cluster_addresses => $keystone_ips,
   }
 
-  rjil::haproxy_service { 'keystone-admin':
-    balancer_ports    => $keystone_admin_port,
-    cluster_addresses => $keystone_internal_ips,
-  }
+#  rjil::haproxy_service { 'keystone-admin':
+#    balancer_ports    => $keystone_admin_port,
+#    cluster_addresses => $keystone_internal_ips,
+#  }
 
 
 }
