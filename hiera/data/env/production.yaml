@@ -1,7 +1,7 @@
-rjil::system::apt::proxy: "http://10.140.218.59:3128/"
+rjil::system::apt::proxy: "http://10.140.212.10:3128/"
 rjil::system::ntp::run_ntpdate: false
 ntp::servers:
-  - 10.140.192.4
+  - 10.140.208.4
 
 public_address: "%{ipaddress_10_140_209_0_26}"
 public_interface: "%{interface_10_140_209_0_26}"
@@ -12,9 +12,9 @@ rjil::system::proxies:
   "no":
     url: "127.0.0.1,localhost,consul,jiocloud.com,jiocloudservices.com"
   http:
-    url: "http://10.140.218.59:3128/"
+    url: "http://10.140.212.10:3128/"
   https:
-    url: "http://10.140.218.59:3128/"
+    url: "http://10.140.212.10:3128/"
 
 rjil::system::accounts::active_users: [roopali,neeraj,himanshus,vpramo,nitin]
 rjil::system::accounts::sudo_users:
@@ -23,7 +23,7 @@ rjil::system::accounts::sudo_users:
 
 rjil::base::self_signed_cert: true
 
-iam_endpoint_name: "iam.ind-west-1.jiocloudservices.com"
+iam_endpoint_name: "iam.ind-west-1.internal.jiocloudservices.com"
 
 apache::default_ssl_cert: "/etc/ssl/certs/%{hiera('iam_endpoint_name')}.crt"
 apache::default_ssl_key: "/etc/ssl/keys/%{hiera('iam_endpoint_name')}.key"
@@ -45,7 +45,7 @@ apt::purge:
 
 
 
-admin_email: joicloud.iamteam@ril.com
+admin_email: jiocloud.iamteam@ril.com
 
 test_user_password: "afbf6d5419f8efd7cf!@#$WERTYUI@#$%^&*"
 admin_password: "110d53b1feJHSGDJ%^&(*&*(+__+J2d1ad294c481a564e9e"
