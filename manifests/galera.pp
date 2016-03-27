@@ -33,7 +33,8 @@ class rjil::galera(
                                           'max_connections' => $mysql_max_connections,
                                           'bind-address'    => $bind_address,
                                           'wsrep_causal_reads' => '1',
-                                          'sync_binlog' => '1000',
+                                          'wsrep_slave_threads'=> '30',
+                                          'innodb_buffer_pool_size' => '100G',
                                         }
                           },
   }
