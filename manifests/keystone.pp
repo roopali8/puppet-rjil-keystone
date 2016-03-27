@@ -85,6 +85,24 @@ class rjil::keystone(
       headers         => $headers,
     }
 
+
+    ## Configure apache reverse proxy
+    apache::vhost { 'keystone_external':
+      servername      => 'iam.ind-west-1.jiocloudservices.com',
+      serveradmin     => $admin_email,
+      port            => 5001,
+      ssl             => true,
+      ssl_cert        => '/etc/ssl/certs/iam.ind-west-1.jiocloudservices.com.crt',
+      ssl_key         => '/etc/ssl/keys/iam.ind-west-1.jiocloudservices.com.key',
+      docroot         => '/usr/lib/cgi-bin/keystone',
+      error_log_file  => 'keystone.log',
+      access_log_file => 'keystone.log',
+      proxy_pass      => [ { path => '/', url => "http://localhost:${public_port_internal}/"  } ],
+      rewrites        => $rewrites,
+      headers         => $headers,
+    }
+
+
     ## Configure apache reverse proxy
     apache::vhost { 'keystone-admin':
       servername      => $server_name,
