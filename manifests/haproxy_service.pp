@@ -9,11 +9,11 @@ define rjil::haproxy_service(
   $cluster_addresses = [],
   $listen_options    =  {
     'option'  => 'tcpka',
-    'option'  => 'abortonclose',
+    'option'  => ['abortonclose','httpchk'],
     'balance' => 'roundrobin',
   },
   $listen_mode      = 'tcp',
-  $balancer_options = 'check inter 10s rise 2 fall 3',
+  $balancer_options = 'check port 9095 inter 10s rise 2 fall 3',
   $balancer_cookie  = undef,
   $bind_options     = undef,
   $ssl              = false,
